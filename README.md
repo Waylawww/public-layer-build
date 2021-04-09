@@ -47,104 +47,64 @@ vm.$layer.open(option);
 option 详细信息见文档后面
 ```
 ****
+### 客户使用案例
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210408172547410.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI3NTMyMTY3,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210408172557687.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI3NTMyMTY3,size_16,color_FFFFFF,t_70#pic_center)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210408172605307.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI3NTMyMTY3,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021040817261313.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI3NTMyMTY3,size_16,color_FFFFFF,t_70#pic_center)
+
+
+****
 ### 静态方法
 
-open(option) //打开弹框,并且返回弹框实例
-
-close(instance) //关闭弹框
-
-closeAll() //关闭所有弹框
+ | 方法名 | 含义 |
+| :----:  | :----: |
+| open(option) | 打开弹框,并且返回弹框实例| 
+| close(instance) | 传入弹框实例，关闭弹框| | 
+|  closeAll()|  关闭所有弹框| 
 ****
 ### option 参数选项
-
-###
-{
-###
-hasHead: true, //是否拥有头部
-###
-customHead: null, //自定义头部（支持组件、html代码片段、dom元素）
-###
-title: "测试", //标题
-###
-hasMin: false, //是否有最小化按钮
-###
-hasMax: false, //是否有最大化按钮
-###
-content: null, //弹框内容（支持组件、html代码片段、dom元素）
-###
-move: true, //是否可以拖动
-###
-shade: true, //是否有遮罩
-###
-minWidth: 300, //最小化宽度
-###
-minHight: 40, //最小化高度
-###
-bottomOff: 30, //最小化后距离窗口底部距离
-###
-leftOff: 4, //最小化后距离窗口左边距离
-###
-rowGap: 8, //行间距
-###
-colGap: 8, //列间距
-###
-location: {
-###
-//弹框位置，可由对象指定,为空则默认居中显示，左上角和右下角二选一，支持px和百分比
-###
-top: null,
-###
-left: null,
-###
-bottom: "10%",
-###
-right: "10px",
-},
-###
-area: {
-###
-//弹框大小，支持px和百分比
-###
-height: "300px",
-###
-width: "30%",
-###
-},
-###
-subData: null, //用于弹框接受参数
-###
-multiple: false, //是否为多弹框模式
-###
-blank: false, //是否在点击空白处自动关闭弹框，仅在 shade 为 true 时有效
-###
-mixin: null, //混淆，用于完全个性化定制
-###
-theme: null, //自定义皮肤
-###
-//回调开始
-###
-success: null, //弹出成功后回调 type: Function
-###
-cancel: null, //弹框关闭回调，type: Function
-###
-minBack: null, //最小化回调 type: Function
-###
-maxBack: null, //最大化回调 type: Function
-###
-restore: null, //复原后回调 type: Function
-};
+ | 属性名 | 属性效果 |
+| :----:  | :----: |
+| hasHead | true/false, 是否拥有头部| 
+| customHead | 自定义头部（支持vue组件、html代码片段、dom元素、字符串）| |
+|  title|  String,标题| 
+|  hasMin|   true/false,是否有最小化按钮| 
+|  hasMax|   true/false,是否有最大化按钮|
+|  content|   弹框内容（支持vue组件、html代码片段、dom元素、字符串）|
+|  move|   true/false,是否可以拖动|
+|  shade|   true/false,是否有遮罩|
+|  minWidth|   Number,最小化宽度|
+|  minHight|   Number,最小化高度|
+|  bottomOff|   Number,最小化后距离窗口底部距离|
+|  leftOff|   Number,最小化后距离窗口左边距离|
+|  rowGap|   Number,行间距|
+|  colGap|   Number,列间距|
+|  location|   {top：0，left：0，bottom：0，right：0}，弹框位置，可由对象指定,为空则默认居中显示，左上角和右下角二选一，支持px和百分比|
+|area| {height: "300px", width: "30%",}弹框大小，可由对象指定，支持px和百分比|
+|subData|Object类型，用于向弹框内部组件传递参数，用法同[props](https://cn.vuejs.org/v2/api/#props)|
+|multiple|  true/false,是否为多弹框模式|
+|blank|true/false,是否在点击空白处自动关闭弹框，仅在 shade 为 true 时有效|
+|mixin| Object, [混淆](https://cn.vuejs.org/v2/api/#mixins)，用于完全个性化定制|
+|theme|String, 自定义皮肤|
+|success|弹出成功后回调 type: Function|
+|cancel|弹框关闭回调，type: Function|
+|minBack| 最小化回调 type: Function|
+|maxBack| 最大化回调 type: Function|
+|restore|复原后回调 type: Function|
 ****
 ### 实例方法
 
 ```javascript
-close() //关闭当前弹框
-min() //最小化当前弹框
-max() //最大化当前弹框
-reset() //窗口复原
-....
+instance.close() //关闭当前弹框
+instance.min() //最小化当前弹框
+instance.max() //最大化当前弹框
+instance.reset() //窗口复原
+....更多接口可查看instance实例对象
 ```
 ****
-### 效果图
+### 默认效果图
 ![回调函数演示](https://img-blog.csdnimg.cn/20210402234803754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI3NTMyMTY3,size_16,color_FFFFFF,t_70#pic_center)
 ![多弹框测试](https://img-blog.csdnimg.cn/20210402235134408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI3NTMyMTY3,size_16,color_FFFFFF,t_70#pic_center)
 
